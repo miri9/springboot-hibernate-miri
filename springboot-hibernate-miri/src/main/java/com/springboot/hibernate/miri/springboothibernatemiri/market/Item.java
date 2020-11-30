@@ -1,4 +1,5 @@
 package com.springboot.hibernate.miri.springboothibernatemiri.market;
+
 /**
  * Item
  * 
@@ -14,9 +15,11 @@ package com.springboot.hibernate.miri.springboothibernatemiri.market;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,23 +28,32 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
+@Table(name = "tbl_item")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @ToString
-@Builder
 public class Item {
     @Id
     @GeneratedValue
+    @Column(name = "item_id")
     private Long id;
-
+    
     // @GeneratedValue
     // private String sn;
-
+    
     // 상품명
     private String name;
     // 상품 단가
     private BigDecimal price;
     // 상품 재고 수량
     private int quantity;
+    
+    
+    @Builder
+    public Item(String name, BigDecimal price, int quantity){
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 }

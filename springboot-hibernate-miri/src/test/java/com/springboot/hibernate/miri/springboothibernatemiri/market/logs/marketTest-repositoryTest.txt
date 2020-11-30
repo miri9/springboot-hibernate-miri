@@ -1,0 +1,64 @@
+
+[실행 코드]
+orderRepository.save(order);
+order.getOrderItems().forEach(i->{
+    orderItemRepository.save(i);
+});
+itemRepository.save(item);
+
+[로그]
+
+== order insert == 
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+
+Hibernate:
+    insert
+    into
+        tbl_order
+        (member, order_date, order_status, price, order_id)
+    values
+        (?, ?, ?, ?, ?)
+
+== item,orderItem insert == 
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+
+Hibernate:
+    insert
+    into
+        tbl_item
+        (name, price, quantity, item_id)
+    values
+        (?, ?, ?, ?)
+
+Hibernate:
+    insert
+    into
+        tbl_order_item
+        (item_id, order_id, price, quantity, order_item_id)
+    values
+        (?, ?, ?, ?, ?)
+== item 확인 ==
+Hibernate:
+    select
+        item0_.item_id as item_id1_0_0_,
+        item0_.name as name2_0_0_,
+        item0_.price as price3_0_0_,
+        item0_.quantity as quantity4_0_0_
+    from
+        tbl_item item0_
+    where
+        item0_.item_id=?

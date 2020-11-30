@@ -1,5 +1,6 @@
 - Order, orderItem , item 엔티티화 후
     - spring data jpa 로 한꺼번에 인서트
+        - TODO : cascade 인서트 시, null 체크 이루어지는 지 확인
     - entityManager 설정
 - Board
     - 세션 처리
