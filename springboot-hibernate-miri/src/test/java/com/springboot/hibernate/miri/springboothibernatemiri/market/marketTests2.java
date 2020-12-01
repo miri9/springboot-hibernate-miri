@@ -1,10 +1,10 @@
 package com.springboot.hibernate.miri.springboothibernatemiri.market;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -87,34 +87,81 @@ public class marketTests2 {
         Item item2 = Item.doMake(null, "item2", BigDecimal.valueOf(1000l), 5);
 
         // 서비스 단에서 저장 : Item.id == -1 이면, 객체 없는 값이므로 insert
+        log.info("=== start Arrays.asList(item,item2).forEach ...");
+        List<Long> itemIdList = new ArrayList<>(); // repository.save() 반환 객체 저장용
         Arrays.asList(item,item2).forEach(i -> {
-            if(i.getId() == -1L){
-                log.info("=== insert item!"); 
-            } else {
-                log.info("=== update item!");
-            }
+            // if(i.getId() == -1L){
+            //     log.info("=== insert item!"); 
+            // } else {
+            //     log.info("=== update item!");
+            // }
 
-            itemRepository.save(i);
+            itemIdList.add(itemRepository.save(i).getId());
         });
+        log.info("=== end Arrays.asList(item,item2).forEach ..."); 
+
+        // 1-2. 저장한 item 다시 조회하기
+        List<Item> selectedItemList = new ArrayList<>(); // 다시 조회한 item 객체 저장용
+        itemIdList.forEach(i->{
+            selectedItemList.add(itemRepository.findById(i).get());
+        });
+        log.info("=== start selectedItemList.forEach : 저장한 item 다시 조회 ...");
+        selectedItemList.forEach(i->{
+            log.info(i.toString());
+        });
+        log.info("=== end selectedItemList.forEach : 저장한 item 다시 조회 ...");
+
+
 
         // 2. OrderItem 초기화 
-        // Order 할당 : Order.id => null 에 준하는 값 (-1) 할당
-        // Item 할당 :  앞의 Item
-        OrderItem orderItem = OrderItem.doMake(null, Order.doMakeEmptyOne(), item, 2, null); // id = -1, price = 0
-        OrderItem orderItem2 = OrderItem.doMake(null, Order.doMakeEmptyOne(), item2, 2, BigDecimal.valueOf(5000L)); // id = -1, price = 0
+        // Order 할당 : Order.id => null 
+        // Item 할당 :  앞의 Item 객체 그대로 할당
+        OrderItem orderItem = OrderItem.doMake(null, null, selectedItemList.get(0), 2, null); // order.id = -1, order.price = 0
+        OrderItem orderItem2 = OrderItem.doMake(null, null, selectedItemList.get(1), 2, BigDecimal.valueOf(5000L)); // order.id = -1, order.price = 0
 
-        // 2-1. orderItem.order 현재 값이 없는 상황.
-        // => 현재 OrderItem.order 의 아이디는 -1
-
-        // 2-3. (orderItem db 저장 생략)
+        // 2-1. orderItem.order 필드는 현재 null (다만 nullPointerException 방지하고자 id=-1 로 명시한 Order 객체넣음)
+        // 2-2. Order 안에 orderItems 를 넣고, 디비에 저장
+        // 이 때 Order -> OrderItem 순으로 저장한다.
 
         // 3. Order 초기화
+        // Order.orderItems => 빈 리스트 할당
+        Order order = Order.doMake(null, false, LocalDateTime.now(), "member", Arrays.asList(orderItem,orderItem2), null);
 
-        // 3-1. orderItem.order 에 Order 할당
-        // 3-2. order에 orderItems 할당
+        log.info("== start order.toString: "+order.toString());
+        order.getOrderItems().forEach(i->{
+            log.info((i.getOrder()==null)?"OrderItem.order is null":"OrderItem.order is not null");
+            log.info((i.getItem()==null)?"OrderItem.item is null":"OrderItem.item is not null");
+        });
+        log.info("== end order.toString");
+
+        // 4. Order.changeOrder() 호출 : Order.orderItems 에게 Order 자신의 객체 넘겨줌
+        // Order.changeOrder() 내부에서 OrderItem.changeOrder(Order order) 호출 : 자신이 속한 Order 객체를 받아, 자기 자신 OrderItem 의 order 필드에 할당.
+        order.changeOrder();
+
+        log.info("== log order.toString() after changeOrder(): "+order.toString());
+        order.getOrderItems().forEach(i->{
+            log.info((i.getOrder()==null)?"OrderItem.order is null":"OrderItem.order is not null");
+            log.info((i.getItem()==null)?"OrderItem.item is null":"OrderItem.item is not null");
+        });
+
+        // 5. Order 저장
+        Long orderId = orderRepository.save(order).getId();
+        log.info("== orderId after save: "+orderId);
+
+        // 6. OrderItem 저장
+        order.getOrderItems().forEach(i -> {
+            log.info("== orderItem Id after save: "+orderItemRepository.save(i).getId());
+        });
+
+        // 7. Order 다시 꺼내서 조회.
+        Order selectedOrder = orderRepository.findById(orderId).get();
+        log.info("== selectedOrder.toString() : "+selectedOrder.toString());
+        selectedOrder.getOrderItems().forEach(i->{
+            log.info("== selectedOrder.getOrderItems.toString() : "+i.toString());
+            log.info("== selectedOrder.getOrderItems.i.getOrder.toString() : "+i.getOrder().toString());
+        });
 
 
-        // 3-1. (order db 저장 생략)
 
     }
     /**

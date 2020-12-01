@@ -35,7 +35,6 @@ import lombok.ToString;
  * 
  * - getTotalPrice() : [프리징 데이터] 해당 OrderItem의 실제 주문 가격을 OrderItem.price 에 저장. 
  * - changeOrder() : OrderItem.order 를 속하는 Order 객체로 할당한다.
- * - changeItem() : item 할당. 할당 후에는 getTotalPrice 통해 이 OrderItem 의 최종 금액 산출한다.
  */
 @Table(name = "tbl_order_item")
 @Entity
@@ -92,8 +91,11 @@ public class OrderItem {
      */
     @Builder(access = AccessLevel.PROTECTED)
     public OrderItem(Long id,Order order, Item item, int quantity, BigDecimal price){
-        this.id =  (id == null || id <= 0)? -1 : id;
-        this.order = order == null ? ;
+        // this.id =  (id == null || id <= 0)? -1 : id;
+        this.id =  id;
+        // this.order = order == null ? Order.doMakeEmptyOne() : order;
+        this.order = order;
+        // this.item = item == null ? Item.doMakeEmptyOne() : item;
         this.item = item;
         this.quantity = quantity < 0 ? 0 : quantity;
         this.price = price == null || price.compareTo(BigDecimal.ZERO) == -1 ? BigDecimal.ZERO : price;
@@ -118,18 +120,8 @@ public class OrderItem {
      * Order.changeOrder 호출 시 안에서 호출하는 메서드로
      * OrderItem.order 를 속하는 Order 객체로 할당한다.
      */
-	// public void changeOrder(Order order){
-    //     System.out.println("OrderItem.changeOrder() 호출");
-    //     this.order = order;
-    // }
-    
-    // /**
-    //  * changeItem
-    //  * orderItem.item 에 인자 item 을 할당한다.
-    //  * item 할당 후에는 getTotalPrice 통해 이 OrderItem 의 최종 금액 산출한다.
-    //  */
-    // public void changeItem(Item item){
-    //     System.out.println("OrderItem.changeItem() 호출");
-    //     // orderItem.item = item;
-    // }
+	public void changeOrder(Order order){
+        System.out.println("OrderItem.changeOrder() 호출");
+        this.order = order;
+    }
 }

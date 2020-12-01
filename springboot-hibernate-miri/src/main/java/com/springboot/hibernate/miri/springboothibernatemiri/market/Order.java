@@ -77,6 +77,7 @@ public class Order {
         return Order.builder()
                 .id(id)
                 .orderStatus(orderStatus)
+                .orderDate(orderDate)
                 .member(member)
                 .orderItems(orderItems)
                 .price(price)
@@ -87,11 +88,11 @@ public class Order {
      * doMakeEmptyOne
      * Null Object 임을 암시하는 Order 객체 반환.
      */
-    public static Order doMakeEmptyOne(){
-        return Order.builder()
-                .id(-1L)
-                .build();
-    }
+    // public static Order doMakeEmptyOne(){
+    //     return Order.builder()
+    //             .id(-1L)
+    //             .build();
+    // }
 
     /**
      * AllArgs 생성자
@@ -103,7 +104,8 @@ public class Order {
      */
     @Builder(access = AccessLevel.PROTECTED)
     public Order(Long id,boolean orderStatus, LocalDateTime orderDate, String member, List<OrderItem> orderItems, BigDecimal price){
-        this.id = (id == null || id <= 0)? -1 : id;
+        // this.id = (id == null || id <= 0)? -1 : id;
+        this.id = id;
         this.orderStatus = orderStatus;
         this.orderDate = orderDate;
         this.member = member;
@@ -132,12 +134,12 @@ public class Order {
      * Order.orderItems 에게 Order 자신의 객체를 
      * OrderItem.order 에 할당한다. (OrderItem.changeOrder(this) 호출)
      */
-    // public void changeOrder(){
-    //     System.out.println("Order.changeOrder() 호출");
+    public void changeOrder(){
+        System.out.println("Order.changeOrder() 호출");
 
-    //     for(OrderItem orderItem : this.orderItems){
-    //         orderItem.changeOrder(this);
-    //     }
-    // }
+        for(OrderItem orderItem : this.orderItems){
+            orderItem.changeOrder(this);
+        }
+    }
 
 }

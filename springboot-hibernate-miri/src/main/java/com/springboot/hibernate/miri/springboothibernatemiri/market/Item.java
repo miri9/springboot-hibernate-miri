@@ -78,12 +78,20 @@ public class Item {
      */
     @Builder(access = AccessLevel.PROTECTED)
     protected Item(Long id,String name, BigDecimal price, int quantity){
-        this.id = (id == null || id <= 0)? -1 : id;
+        // this.id = (id == null || id <= 0)? -1 : id;
+        this.id = id;
         this.name = name;
         this.price = price == null || price.compareTo(BigDecimal.ZERO) == -1 ? BigDecimal.ZERO : price;
         this.quantity = quantity < 0 ? 0 : quantity;
     }
-	public static Item doMakeEmptyOne() {
-		return null;
-	}
+
+    /**
+     * doMakeEmptyOne
+     * Null Object 임을 암시하는 Order 객체 반환.
+     */
+	// public static Item doMakeEmptyOne() {
+	// 	return Item.builder()
+    //             .id(-1L)
+    //             .build();
+	// }
 }

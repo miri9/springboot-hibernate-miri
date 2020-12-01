@@ -1,0 +1,138 @@
+20:57:06.320 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:57:06.333 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:57:06.367 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:57:06.379 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2], using SpringBootContextLoader
+20:57:06.383 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]: class path resource [com/springboot/hibernate/miri/springboothibernatemiri/market/marketTests2-context.xml] does not exist
+20:57:06.384 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]: class path resource [com/springboot/hibernate/miri/springboothibernatemiri/market/marketTests2Context.groovy] does not exist
+20:57:06.384 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:57:06.385 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]: marketTests2 does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:57:06.430 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]
+20:57:06.507 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\git-miri\springboot-hibernate-miri\springboot-hibernate-miri\target\classes\com\springboot\hibernate\miri\springboothibernatemiri\SpringbootHibernateMiriApplication.class]
+20:57:06.508 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.springboot.hibernate.miri.springboothibernatemiri.SpringbootHibernateMiriApplication for test class com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2
+20:57:06.626 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2]: using defaults.
+20:57:06.627 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:57:06.644 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@78f5c518, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2f48b3d2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@34f7234e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@753432a2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@23bff419, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4983159f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@44e3a2b2, org.springframework.test.context.event.EventPublishingTestExecutionListener@101639ae, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4c550889, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1d2bd371, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@44040454, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@65fe9e33, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@18bc345, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@42f8285e]
+20:57:06.648 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@56e8b606 testClass = marketTests2, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2dd29a59 testClass = marketTests2, locations = '{}', classes = '{class com.springboot.hibernate.miri.springboothibernatemiri.SpringbootHibernateMiriApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@660acfb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1f9f6368, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4f49f6af, org.springframework.boot.test.web.reactive.server.WebTestClientContextCustomizer@503f91c3, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@20bd8be5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4a07d605, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@56a6d5a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+20:57:06.732 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.0)
+
+2020-12-01 20:57:07.107  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : Starting marketTests2 using Java 11.0.8 on DESKTOP-A647AHV with PID 12700 (started by miri in C:\git-miri\springboot-hibernate-miri\springboot-hibernate-miri)
+2020-12-01 20:57:07.112  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : No active profile set, falling back to default profiles: default
+2020-12-01 20:57:07.953  INFO 12700 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-01 20:57:08.034  INFO 12700 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
+2020-12-01 20:57:08.820  INFO 12700 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-01 20:57:08.901  INFO 12700 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-01 20:57:08.994  INFO 12700 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-12-01 20:57:09.238  WARN 12700 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-01 20:57:09.249  INFO 12700 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-01 20:57:09.659  INFO 12700 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-01 20:57:09.669  WARN 12700 --- [         task-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2020-12-01 20:57:10.178  INFO 12700 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-01 20:57:10.217  INFO 12700 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-12-01 20:57:11.417  INFO 12700 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-01 20:57:11.425  INFO 12700 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-01 20:57:12.051  WARN 12700 --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-01 20:57:12.338  INFO 12700 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-12-01 20:57:12.453  INFO 12700 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-12-01 20:57:12.462  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : Started marketTests2 in 5.721 seconds (JVM running for 6.976)
+2020-12-01 20:57:12.536  INFO 12700 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@56e8b606 testClass = marketTests2, testInstance = com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2@2c0798bd, testMethod = OrderWithObjTest@marketTests2, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2dd29a59 testClass = marketTests2, locations = '{}', classes = '{class com.springboot.hibernate.miri.springboothibernatemiri.SpringbootHibernateMiriApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@660acfb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1f9f6368, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4f49f6af, org.springframework.boot.test.web.reactive.server.WebTestClientContextCustomizer@503f91c3, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@20bd8be5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4a07d605, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@56a6d5a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@7757025d]; rollback [false]
+2020-12-01 20:57:12.669  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : === start Arrays.asList(item,item2).forEach ...
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+2020-12-01 20:57:12.746  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : === end Arrays.asList(item,item2).forEach ...
+2020-12-01 20:57:12.757  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : === start selectedItemList.forEach : 저장한 item 다시 조회 ...
+2020-12-01 20:57:12.758  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : Item(id=428, name=item1, price=2000, quantity=10)
+2020-12-01 20:57:12.758  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : Item(id=429, name=item2, price=1000, quantity=5)
+2020-12-01 20:57:12.758  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : === end selectedItemList.forEach : 저장한 item 다시 조회 ...
+2020-12-01 20:57:12.759  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == start order.toString: Order(id=null, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0)
+2020-12-01 20:57:12.759  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.order is null
+2020-12-01 20:57:12.760  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.item is not null
+2020-12-01 20:57:12.760  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.order is null
+2020-12-01 20:57:12.760  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.item is not null
+2020-12-01 20:57:12.760  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == end order.toString
+Order.changeOrder() 호출
+OrderItem.changeOrder() 호출
+OrderItem.changeOrder() 호출
+2020-12-01 20:57:12.761  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == log order.toString() after changeOrder(): Order(id=null, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0)
+2020-12-01 20:57:12.762  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.order is not null
+2020-12-01 20:57:12.762  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.item is not null
+2020-12-01 20:57:12.762  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.order is not null
+2020-12-01 20:57:12.762  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : OrderItem.item is not null
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+2020-12-01 20:57:12.786  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == orderId after save: 430
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+2020-12-01 20:57:12.797  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == orderItem Id after save: 431
+Hibernate:
+    select
+        hibernate_sequence.nextval
+    from
+        dual
+2020-12-01 20:57:12.804  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == orderItem Id after save: 432
+2020-12-01 20:57:12.805  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == selectedOrder.toString() : Order(id=430, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0)
+2020-12-01 20:57:12.806  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == selectedOrder.getOrderItems.toString() : OrderItem(id=431, order=Order(id=430, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0), quantity=2, price=0)
+2020-12-01 20:57:12.806  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == selectedOrder.getOrderItems.i.getOrder.toString() : Order(id=430, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0)
+2020-12-01 20:57:12.806  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == selectedOrder.getOrderItems.toString() : OrderItem(id=432, order=Order(id=430, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0), quantity=2, price=5000)
+2020-12-01 20:57:12.806  INFO 12700 --- [           main] c.s.h.m.s.market.marketTests2            : == selectedOrder.getOrderItems.i.getOrder.toString() : Order(id=430, orderStatus=false, orderDate=2020-12-01T20:57:12.759736300, member=member, price=0)
+Hibernate:
+    insert
+    into
+        tbl_item
+        (name, price, quantity, item_id)
+    values
+        (?, ?, ?, ?)
+Hibernate:
+    insert
+    into
+        tbl_item
+        (name, price, quantity, item_id)
+    values
+        (?, ?, ?, ?)
+Hibernate:
+    insert
+    into
+        tbl_order
+        (member, order_date, order_status, price, order_id)
+    values
+        (?, ?, ?, ?, ?)
+Hibernate:
+    insert
+    into
+        tbl_order_item
+        (item_id, order_id, price, quantity, order_item_id)
+    values
+        (?, ?, ?, ?, ?)
+Hibernate:
+    insert
+    into
+        tbl_order_item
+        (item_id, order_id, price, quantity, order_item_id)
+    values
+        (?, ?, ?, ?, ?)
+2020-12-01 20:57:12.893  INFO 12700 --- [           main] o.s.t.c.transaction.TransactionContext   : Committed transaction for test: [DefaultTestContext@56e8b606 testClass = marketTests2, testInstance = com.springboot.hibernate.miri.springboothibernatemiri.market.marketTests2@2c0798bd, testMethod = OrderWithObjTest@marketTests2, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2dd29a59 testClass = marketTests2, locations = '{}', classes = '{class com.springboot.hibernate.miri.springboothibernatemiri.SpringbootHibernateMiriApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@660acfb, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1f9f6368, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4f49f6af, org.springframework.boot.test.web.reactive.server.WebTestClientContextCustomizer@503f91c3, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@20bd8be5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4a07d605, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@56a6d5a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true]]
+2020-12-01 20:57:12.912  INFO 12700 --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-01 20:57:12.914  INFO 12700 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-01 20:57:12.915  INFO 12700 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-01 20:57:13.012  INFO 12700 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
