@@ -1,0 +1,1 @@
+- Long id == -1 : null 에 준하는 값. insert/update 분기점.

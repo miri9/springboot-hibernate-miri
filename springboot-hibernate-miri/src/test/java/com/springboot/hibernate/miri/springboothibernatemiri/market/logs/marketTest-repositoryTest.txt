@@ -1,9 +1,12 @@
 
 [실행 코드]
+
 orderRepository.save(order);
+
 order.getOrderItems().forEach(i->{
     orderItemRepository.save(i);
 });
+
 itemRepository.save(item);
 
 [로그]
